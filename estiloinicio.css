@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('./assets/fonts/Gotham-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+body {
+    font-family: "Gotham";
+    background-color: #1e1e2f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolbar {
+    width: 100%;
+    background-color: #6a0dad;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    height: 80px; 
+    position: fixed; /* Para que la barra permanezca en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 120px; 
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav button {
+    background-color: #8a2be2; /* Morado más claro */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav button:hover {
+    background-color: #7a1fa2; /* Morado intermedio */
+}
+
+main {
+    width: 100%;
+    max-width: 800px; 
+    margin: 120px auto 20px; /* Añadimos margen superior para evitar que el contenido se superponga con la barra */
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.album-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.album-list li {
+    margin: 10px 0;
+}
+
+.album-list a {
+    color: #b19cd9;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.album-list a:hover {
+    color: #dcdcdc; /* Gris claro */
+}
+
+/* Estilos de calificación */
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+    font-size: 25px;
+}
+
+.rating::before {
+    content: "★★★★★";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #444444; /* Gris oscuro */
+}
+
+.rating::after {
+    content: "★★★★★";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: gold;
+    overflow: hidden;
+    width: 0;
+}
+
+.rating[data-rating="1"]::after { width: 20%; }
+.rating[data-rating="1.5"]::after { width: 30%; }
+.rating[data-rating="2"]::after { width: 40%; }
+.rating[data-rating="2.5"]::after { width: 50%; }
+.rating[data-rating="3"]::after { width: 60%; }
+.rating[data-rating="3.5"]::after { width: 70%; }
+.rating[data-rating="4"]::after { width: 80%; }
+.rating[data-rating="4.5"]::after { width: 90%; }
+.rating[data-rating="5"]::after { width: 100%; }
